@@ -1,0 +1,25 @@
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: blue;
+  padding: 14px 10px;
+
+  div {
+      margin-right: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    .bookIcon {
+        font-size: 32px;
+        color: white;
+        margin-left: 24px;
+    }
+    
+    .link {
+        color: white;
+      text-decoration: none;
+    }
+  }
+}
