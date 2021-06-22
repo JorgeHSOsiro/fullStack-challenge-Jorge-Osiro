@@ -3,10 +3,10 @@ const Classes = (sequelize, DataTypes) => {
       'classes',
       {
         user_Id: DataTypes.INTEGER,
-        name: Sequelize.STRING,
-        representative_one: Sequelize.STRING, 
-        representative_two: Sequelize.STRING,
-        contact: Sequelize.STRING,
+        name: DataTypes.STRING,
+        representative_one: DataTypes.STRING, 
+        representative_two: DataTypes.STRING,
+        contact: DataTypes.STRING,
       },
       { timestamps: false },
     );

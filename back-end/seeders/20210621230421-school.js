@@ -2,12 +2,12 @@ module.exports = {
   up: async (queryInterface, _Sequelize) => {
     await queryInterface.bulkInsert('schools', [
       {
-        name: 'Escola Souza',
+        name: 'EMEF Cacilda Becker',
         director: 'Paulo Souza',
 
       },
       {
-        name: 'Escola Silva',
+        name: 'EMIA - Escola Municipal de Iniciação Artística',
         director: 'Maria Silva',
       },
     ], {});
