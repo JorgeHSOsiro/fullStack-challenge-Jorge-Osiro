@@ -6,6 +6,9 @@ const api = axios.create({
 
 const getSchools = () => (api.get('/'));
 
+const registerSchool = (schoolName, director) => (api.post('/new-school', { schoolName, director}))
+
 export default {
     getSchools,
+    registerSchool,
 };
