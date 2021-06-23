@@ -3,12 +3,10 @@ module.exports = {
     await queryInterface.bulkInsert('schools', [
       {
         name: 'EMEF Cacilda Becker',
-        director: 'Paulo Souza',
 
       },
       {
         name: 'EMIA - Escola Municipal de Iniciação Artística',
-        director: 'Maria Silva',
       },
     ], {});
   },

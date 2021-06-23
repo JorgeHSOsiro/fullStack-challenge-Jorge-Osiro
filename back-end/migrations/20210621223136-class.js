@@ -15,18 +15,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      representative_one: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      representative_two: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      contact: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
     }),
 
   down: async (queryInterface, _Sequelize) => queryInterface.dropTable('classes'),

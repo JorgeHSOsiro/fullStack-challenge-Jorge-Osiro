@@ -1,5 +1,5 @@
 module.exports = {
-  up: async (queryInterface, Sequelize) => queryInterface.createTable('users',
+  up: async (queryInterface, Sequelize) => queryInterface.createTable('directors',
     {
       id: {
         type: Sequelize.INTEGER,
@@ -19,12 +19,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      role: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      school_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
     }),
 
-  down: async (queryInterface, _Sequelize) => queryInterface.dropTable('users'),
+  down: async (queryInterface, _Sequelize) => queryInterface.dropTable('directors'),
 };
-

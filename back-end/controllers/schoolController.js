@@ -1,4 +1,4 @@
-const { schools } = require("../models");
+const { schools, directors } = require("../models");
 
 const getAllSchools = async (_req, res) => {
   try {
@@ -13,7 +13,8 @@ const getSchool = async (req, res) => {
   try {
     const { id } = req.params;
     const response = await schools.findOne({ where: { id } });
-    return res.status(200).json(response);
+    const director = await directors.findOne({where: {id}});
+    return res.status(200).json({response, director});
   } catch (error) {
     return res.status(500).send({ message: error.message });
   }
@@ -21,12 +22,12 @@ const getSchool = async (req, res) => {
 
 const registerSchool = async (req, res) => {
   try {
-    const { schoolName, director } = req.body;
+    const { schoolName } = req.body;
     const oldSchool = await schools.findOne({ where: { name: schoolName } });
     if (oldSchool) {
       throw new Error();
     } else {
-      const newSchool = await schools.create({ name: schoolName, director });
+      const newSchool = await schools.create({ name: schoolName });
       return res.status(200).json(newSchool);
     }
   } catch (error) {
@@ -40,13 +41,26 @@ const deleteSchool = async (req, res) => {
     await schools.destroy({ where: { id } });
     return res.status(200).json({ message: "excluído com sucesso!" });
   } catch (error) {
-    return res.status(50).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
+
+const updateSchool = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { schoolName, directorName } = req.body;
+    console.log(schoolName, directorName);
+    await schools.update({name: schoolName}, {where: { id }});
+    await directors.update({school_id: id}, {where: { name: directorName }});
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+}
 
 module.exports = {
   getAllSchools,
   registerSchool,
   getSchool,
   deleteSchool,
+  updateSchool,
 };

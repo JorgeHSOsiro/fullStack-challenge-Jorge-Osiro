@@ -6,17 +6,16 @@ import styles from "./styles.module.scss";
 
 export default function FormEscola() {
   const [schoolName, setSchoolName] = useState("");
-  const [director, setDirector] = useState("");
   const [message, setMessage] = useState("");
 
   const history = useHistory();
 
   const registraNovaEscola = () => {
-    if (schoolName === "" || director === "") {
+    if (schoolName === "") {
       setMessage("Campos não podem ser em branco");
     } else {
       api
-        .registerSchool(schoolName, director)
+        .registerSchool(schoolName)
         .then(() => history.push("/"))
         .catch(() => setMessage("Escola ja cadastrada"));
     }
@@ -38,16 +37,6 @@ export default function FormEscola() {
             placeholder="Digite o nome da escola"
             value={schoolName}
             onChange={(e) => setSchoolName(e.target.value)}
-          />
-        </label>
-        <label>
-          Diretor{" "}
-          <input
-            type="text"
-            name="name"
-            placeholder="Digite o nome do diretor"
-            value={director}
-            onChange={(e) => setDirector(e.target.value)}
           />
         </label>
         <input

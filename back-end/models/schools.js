@@ -3,16 +3,20 @@ const Schools = (sequelize, DataTypes) => {
     "schools",
     {
       name: DataTypes.STRING,
-      director: DataTypes.STRING,
     },
     { timestamps: false }
   );
   School.associate = (models) => {
     School.hasMany(models.classes, {
-      foreignKey: "id",
+      foreignKey: "school_id",
       as: "class",
     });
+    School.hasOne(models.directors, {
+      foreignKey: "school_id",
+      as: "director",
+    })
   };
+
   return School;
 };
 
