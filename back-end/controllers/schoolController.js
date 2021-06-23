@@ -34,22 +34,6 @@ const registerSchool = async (req, res) => {
   }
 };
 
-const updateSchool = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { schoolName, director } = req.body;
-    const updated = await schools.update(
-      { name: schoolName, director },
-      {
-        where: { id },
-      }
-    );
-    res.status(200).json(updated);
-  } catch (error) {
-    return res.status(401).json({ message: error.message });
-  }
-};
-
 const deleteSchool = async (req, res) => {
   try {
     const { id } = req.params;
@@ -64,6 +48,5 @@ module.exports = {
   getAllSchools,
   registerSchool,
   getSchool,
-  updateSchool,
   deleteSchool,
 };

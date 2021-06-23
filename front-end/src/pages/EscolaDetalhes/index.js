@@ -25,10 +25,6 @@ export default function EscolaDetalhes() {
     <div className={styles.detalhesContainer}>
       <h1>{schoolName}</h1>
       <h2>Diretor: {directorName}</h2>
-      <h2>Turmas</h2>
-      <Link to={`/editar-escola/${id}`} className={styles.link}>
-        Editar
-      </Link>
       <Link type="button" className={styles.linkExcluir} onClick={() => deleteSchoolData(id)}>
         Excluir
       </Link>

@@ -10,9 +10,6 @@ export default function Menu() {
       <div>
         <Link className={styles.bookIcon} to="/"><FaSchool/></Link>
       </div>
-      <div>
-        <Link className={styles.link}>Login</Link>
-      </div>
     </div>
   );
 }
