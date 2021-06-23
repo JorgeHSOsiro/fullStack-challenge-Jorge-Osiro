@@ -13,7 +13,7 @@ const getSchool = async (req, res) => {
   try {
     const { id } = req.params;
     const response = await schools.findOne({ where: { id } });
-    const director = await directors.findOne({where: {id}});
+    const director = await directors.findOne({where: {school_id: id}});
     return res.status(200).json({response, director});
   } catch (error) {
     return res.status(500).send({ message: error.message });
@@ -48,10 +48,10 @@ const deleteSchool = async (req, res) => {
 const updateSchool = async (req, res) => {
   try {
     const { id } = req.params;
-    const { schoolName, directorName } = req.body;
-    console.log(schoolName, directorName);
+    const {  schoolName, directorName } = req.body;
     await schools.update({name: schoolName}, {where: { id }});
     await directors.update({school_id: id}, {where: { name: directorName }});
+    return res.status(200).json({ message: "sucesso!" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
