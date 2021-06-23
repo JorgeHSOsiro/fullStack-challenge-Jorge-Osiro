@@ -1,0 +1,26 @@
+.detalhesContainer {
+    padding: 16px;
+    h1 {
+        margin-bottom: 30px;
+    }
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: white;
+        border-radius: 8px;
+        background-color: greenyellow;
+        padding: 8px 18px;
+        margin-right: 16px;
+    }
+
+    .linkExcluir {
+        text-decoration: none;
+        color: white;
+        border-radius: 8px;
+        background-color: red;
+        padding: 8px 18px;
+    }
+}

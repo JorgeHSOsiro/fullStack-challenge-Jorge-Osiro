@@ -4,6 +4,7 @@ import Main from './pages/Main';
 import './App.scss'
 import EscolaDetalhes from './pages/EscolaDetalhes';
 import FormNovaEscola from './pages/FormNovaEscola';
+import EditEscola from './pages/EditEscola';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Menu />
       <Switch>
           <Route exact path='/' component={ Main } />
-          <Route exact path='/detalhes-escola' component={ EscolaDetalhes } />
+          <Route exact path='/detalhes-escola/:id' component={ EscolaDetalhes } />
           <Route exact path='/new-school' component={ FormNovaEscola } />
+          <Route exact path='/editar-escola/:id' component={ EditEscola } />
         </Switch>
     </div>
   );

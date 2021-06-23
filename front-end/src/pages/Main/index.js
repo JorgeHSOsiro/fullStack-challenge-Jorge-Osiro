@@ -18,7 +18,7 @@ const [schools, setSchools] = useState([]);
       <h1>Lista de escolas</h1>
       <Link to="/new-school" className={styles.newSchoolBtn}>Adicionar Escola</Link>
       {schools.map((school) => (
-        <Escola name={school.name} />
+        <Escola name={school.name} id={school.id} />
       ))}
     </div>
   );
