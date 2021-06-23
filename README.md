@@ -1,5 +1,5 @@
 # Fullstack challenge
-Projeto feito como desafio tecnico para a empresa Plataforma A+.
+Projeto feito como desafio tecnico para a EdTech Plataforma A+.
 
 ## Utilizado neste projeto
 javascript
