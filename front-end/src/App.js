@@ -6,7 +6,7 @@ import EscolaDetalhes from './pages/EscolaDetalhes';
 import FormNovaEscola from './pages/FormNovaEscola';
 import EditSchool from './pages/EditSchool';
 import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import RegisterUserForm from './pages/RegisterUserForm';
 import DirectorLoginForm from './pages/DirectorLoginForm'
 import TeacherLoginForm from './pages/TeacherLoginForm';
 
@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/login' component={ LoginPage } />
           <Route exact path='/directorLogin' component={ DirectorLoginForm } />
           <Route exact path='/teacherLogin' component={ TeacherLoginForm } />
-          <Route exact path='/register' component={ RegisterPage } />
+          <Route exact path='/register' component={ RegisterUserForm } />
         </Switch>
     </div>
   );
