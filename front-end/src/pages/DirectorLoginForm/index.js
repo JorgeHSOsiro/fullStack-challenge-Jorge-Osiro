@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import userApi from "../../services/userApi";
+import styles from "./styles.module.scss";
 
 export default function DirectorLoginForm() {
   const [password, setPassword] = useState("");
@@ -21,7 +22,7 @@ export default function DirectorLoginForm() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {message && (
         <div>
           <p>{message}</p>
@@ -48,7 +49,7 @@ export default function DirectorLoginForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <input type="button" value="Entrar" onClick={() => loginUser()} />
+        <input className={styles.sendBtn} type="button" value="Entrar" onClick={() => loginUser()} />
       </form>
     </div>
   );

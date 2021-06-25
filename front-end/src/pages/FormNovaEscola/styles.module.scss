@@ -1,7 +1,19 @@
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 30px;
+
+  .sendBtn {
+    align-self: flex-start;
+    padding: 8px;
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 14px;
+  }
 }

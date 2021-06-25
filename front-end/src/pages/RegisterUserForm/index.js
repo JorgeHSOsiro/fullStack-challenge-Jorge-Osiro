@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 
 import userApi from "../../services/userApi";
+import styles from "./styles.module.scss";
 
 export default function RegisterUserForm() {
   const [name, setName] = useState("");
@@ -26,7 +27,7 @@ export default function RegisterUserForm() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {message && (
         <div>
           <p>{message}</p>
@@ -64,11 +65,15 @@ export default function RegisterUserForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <select value={role} onChange={(e) => handleRole(e.target.value)}>
-          <option value="Diretor">Diretor</option>
-          <option value="Professor">Professor</option>
-        </select>
-        <input type="button" value="Enviar" onClick={() => registerUser()} />
+        <div>
+          <label>Cargo</label>
+          <select value={role} onChange={(e) => handleRole(e.target.value)}>
+            <option value="Diretor">Diretor</option>
+            <option value="Professor">Professor</option>
+          </select>
+        </div>
+
+        <input className={styles.sendBtn} type="button" value="Enviar" onClick={() => registerUser()} />
       </form>
     </div>
   );

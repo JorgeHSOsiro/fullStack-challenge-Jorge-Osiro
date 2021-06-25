@@ -40,6 +40,7 @@ export default function FormEscola() {
           />
         </label>
         <input
+          className={styles.sendBtn}
           type="button"
           value="Enviar"
           onClick={() => registraNovaEscola()}

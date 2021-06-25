@@ -22,7 +22,9 @@ export default function EditSchool() {
   }, [id]);
 
   const updateSchoolData = () => {
-    api.updateSchool(id, schoolName, directorName).then(() => history.push("/"));
+    api
+      .updateSchool(id, schoolName, directorName)
+      .then(() => history.push("/"));
   };
 
   const handleNewDirector = (val) => {
@@ -30,7 +32,7 @@ export default function EditSchool() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <form className={styles.formContainer}>
         <label>
           Nome{" "}
@@ -41,17 +43,19 @@ export default function EditSchool() {
             onChange={(e) => setSchoolName(e.target.value)}
           />
         </label>
-        <label>Diretor</label>
-        <select
-          value={directorName}
-          onChange={(e) => handleNewDirector(e.target.value)}
-        >
-          {allDirectors.map((director) => (
-            <option value={director.name}>{director.name}</option>
-          ))}
-        </select>
-
+        <div>
+          <label>Diretor</label>
+          <select
+            value={directorName}
+            onChange={(e) => handleNewDirector(e.target.value)}
+          >
+            {allDirectors.map((director) => (
+              <option value={director.name}>{director.name}</option>
+            ))}
+          </select>
+        </div>
         <input
+        className={styles.sendBtn}
           type="button"
           value="Enviar"
           onClick={() => updateSchoolData()}
