@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 10px;
+
+        .sendBtn {
+            align-self: flex-start;
+            padding: 8px;
+            background-color: green;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            margin-top: 16px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+}

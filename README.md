@@ -2,8 +2,9 @@
 Projeto feito como desafio tecnico para a EdTech Plataforma A+.
 
 ## Utilizado neste projeto
-javascript
+Javascript
 React
+Sass
 Node
 MySQL
 Sequelize
@@ -15,7 +16,7 @@ Acesse cada uma das pastas de back-end e front-end e execute:
 npm install
 ```
 ## Criando banco de dados Sequelize
-Primeiramente configure seu .env com as variaveis 
+Na pasta back-end configure seu .env com as variaveis 
 MYSQL_USER, MYSQL_PASSWORD, HOSTNAME, SCHEMA.
 
 Para criar o banco de dados(BD) execute: 
@@ -36,4 +37,9 @@ npx sequelize db:seed:all
 para excluir o BD:
 ```bash
 npx sequelize db:drop
+```
+## Iniciar aplicação
+Nas pastas front-end e back-end execute
+```bash
+npm start
 ```

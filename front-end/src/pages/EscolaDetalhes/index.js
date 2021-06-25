@@ -12,8 +12,13 @@ export default function EscolaDetalhes() {
 
   useEffect(() => {
     api.getSchool(id).then(({ data }) => {
-      setSchoolName(data.name);
-      setDirectorName(data.director);
+      setSchoolName(data.response.name);
+      if (data.director) {
+        setDirectorName(data.director.name);
+      } else {
+        setDirectorName('sem diretor');
+      }
+      
     });
   }, [id]);
 
@@ -25,6 +30,9 @@ export default function EscolaDetalhes() {
     <div className={styles.detalhesContainer}>
       <h1>{schoolName}</h1>
       <h2>Diretor: {directorName}</h2>
+      <Link to={`/edit-school/${id}`} type="button" className={styles.link}>
+        Editar
+      </Link>
       <Link type="button" className={styles.linkExcluir} onClick={() => deleteSchoolData(id)}>
         Excluir
       </Link>

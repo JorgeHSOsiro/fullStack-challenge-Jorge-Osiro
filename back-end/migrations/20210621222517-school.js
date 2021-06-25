@@ -11,10 +11,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      director: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       
     }),
 
