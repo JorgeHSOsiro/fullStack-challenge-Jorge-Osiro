@@ -1,5 +1,5 @@
 # Fullstack challenge
-Projeto feito como desafio tecnico para a empresa Plataforma A+.
+Projeto feito como desafio tecnico para a EdTech Plataforma A+.
 
 ## Utilizado neste projeto
 Javascript
@@ -38,7 +38,6 @@ para excluir o BD:
 ```bash
 npx sequelize db:drop
 ```
-
 ## Iniciar aplicação
 Nas pastas front-end e back-end execute
 ```bash
